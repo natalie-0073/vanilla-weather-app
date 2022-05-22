@@ -1,0 +1,32 @@
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    #clouds-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .content {
+        position: fixed;
+        max-width: 600px;
+        margin-top: 70px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+    }
