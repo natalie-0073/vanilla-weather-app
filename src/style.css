@@ -36,3 +36,20 @@
     .future-forecast {
         overflow: auto;
     }
+    
+    .future-forecast .col-2 {
+        text-align: center;
+    }
+    
+    .ul-image {}
+    
+    .weather-image {
+        max-width: 100%;
+        min-width: 30px;
+        max-height: 100%;
+    }
+    
+    .day,
+    .future-temp {
+        font-weight: 300;
+    }
