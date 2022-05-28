@@ -12,9 +12,8 @@
         background-size: cover;
     }
     
-    ul {
-        list-style: none;
-        padding: 0;
+    h1 {
+        padding-top: 10px;
     }
     
     p {
@@ -31,7 +30,9 @@
         color: #f1f1f1;
         left: 50%;
         transform: translateX(-50%);
-        padding: 10px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
     
     .future-forecast {
@@ -42,11 +43,9 @@
         text-align: center;
     }
     
-    .ul-image {}
-    
     .weather-image {
         max-width: 100%;
-        min-width: 50px;
+        min-width: 30px;
         max-height: 100%;
     }
     
@@ -80,4 +79,33 @@
         display: flex;
         align-items: center;
         max-width: 100%;
+    }
+    
+    .temp-sign {
+        filter: invert(100%) sepia(0%) saturate(290%) hue-rotate(170deg) brightness(121%) contrast(100%);
+    }
+    
+    .search_input {
+        width: 170px;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+    }
+    
+    .search-city-input {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .search-button {
+        background: #0E416E;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0 15px;
+        transition: all .2s;
+    }
+    
+    .search-button:hover {
+        background: #2868AC;
     }
