@@ -46,11 +46,38 @@
     
     .weather-image {
         max-width: 100%;
-        min-width: 30px;
+        min-width: 50px;
         max-height: 100%;
     }
     
     .day,
     .future-temp {
         font-weight: 300;
+    }
+    
+    .humidity {
+        display: block;
+    }
+    
+    .wind {
+        display: block;
+    }
+    
+    .desc-info {
+        align-self: center;
+    }
+    
+    .current-temp {
+        font-size: 4rem;
+    }
+    
+    .cel-fahr {
+        position: relative;
+        top: -20px;
+    }
+    
+    .current-weather-info {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
     }
