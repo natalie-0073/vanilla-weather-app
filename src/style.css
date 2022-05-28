@@ -32,3 +32,7 @@
         transform: translateX(-50%);
         padding: 10px;
     }
+    
+    .future-forecast {
+        overflow: auto;
+    }
