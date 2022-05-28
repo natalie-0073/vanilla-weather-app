@@ -78,7 +78,6 @@
     .current-weather-info {
         display: flex;
         align-items: center;
-        max-width: 100%;
     }
     
     .temp-sign {
