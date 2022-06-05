@@ -108,3 +108,7 @@
     .search-button:hover {
         background: #2868AC;
     }
+    
+    #sky-condition {
+        text-transform: capitalize;
+    }

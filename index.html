@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -23,18 +24,18 @@
                 <div class="col-12 search-city-input"><input type="text" placeholder="Find your city" class="search_input">
                     <button class="search-button" type="submit">Search</button></div>
             </div>
-            <h1>London</h1>
+            <h1 id="city-name">London</h1>
 
             <p>Friday 12:20</p>
-            <p>Clear</p>
+            <p id="sky-condition"></p>
 
             <div class="row">
                 <div class="col-6 current-weather-info">
-                    <img src="img/5729378_sun_sunny_weather_climate_forecast_icon.svg" alt="sunny"><span class="current-temp">12</span><span class="cel-fahr"><a>&deg;C</a> | <a>&deg;F</a></span>
+                    <img src="img/5729378_sun_sunny_weather_climate_forecast_icon.svg" alt="sunny"><span class="current-temp" id="current-temperature">12</span><span class="cel-fahr"><a>&deg;C</a> | <a>&deg;F</a></span>
                 </div>
                 <div class="col-6 desc-info">
-                    <span class="humidity">Humidity: 50%</span>
-                    <span class="wind">Wind: 3m/s</span>
+                    <span class="humidity">Humidity: <span  id="humidity"></span>%</span>
+                    <span class="wind">Wind: <span  id="wind-speed"></span>m/s</span>
                 </div>
             </div>
             <div class="row future-forecast">
