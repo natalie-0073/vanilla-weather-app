@@ -126,3 +126,16 @@
         color: #041F3C;
         cursor: default;
     }
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+    
+    footer a:hover {
+        color: bisque;
+        cursor: pointer;
+    }
