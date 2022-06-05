@@ -112,3 +112,17 @@
     #sky-condition:first-letter {
         text-transform: capitalize;
     }
+    
+    .active {
+        text-decoration: none;
+        color: #041F3C;
+    }
+    
+    a {
+        color: white;
+    }
+    
+    a:hover {
+        color: #041F3C;
+        cursor: default;
+    }

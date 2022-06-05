@@ -1,3 +1,5 @@
+let celsiusTemp = null;
+
 function formatDate() {
     let date = new Date();
     let num = date.getDate();
@@ -26,7 +28,8 @@ function displayTemperature(response) {
     let cityName = document.querySelector("#city-name");
     cityName.innerHTML = response.data.name;
     let currTemp = document.querySelector("#current-temperature");
-    currTemp.innerHTML = Math.round(response.data.main.temp);
+    celsiusTemp = response.data.main.temp;
+    currTemp.innerHTML = Math.round(celsiusTemp);
     let skyCondition = document.querySelector("#sky-condition");
     skyCondition.innerHTML = response.data.weather[0].description;
     let humidity = document.querySelector("#humidity");
@@ -54,4 +57,27 @@ function submitting(event) {
     let searchInput = document.querySelector("#search-input");
     search(searchInput.value);
 }
+
+let fahrTemp = document.querySelector("#fahrenheit");
+let celTemp = document.querySelector("#celsius");
+
+function showFahrTemp(event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#current-temperature");
+    let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
+    temperature.innerHTML = Math.round(fahrenheitTemperature);
+    fahrTemp.classList.add("active");
+    celTemp.classList.remove("active");
+}
+
+function showCel(event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#current-temperature");
+    temperature.innerHTML = Math.round(celsiusTemp);
+    fahrTemp.classList.remove("active");
+    celTemp.classList.add("active");
+}
+fahrTemp.addEventListener("click", showFahrTemp);
+
+celTemp.addEventListener("click", showCel);
 search("London");
