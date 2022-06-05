@@ -109,6 +109,6 @@
         background: #2868AC;
     }
     
-    #sky-condition {
+    #sky-condition:first-letter {
         text-transform: capitalize;
     }
