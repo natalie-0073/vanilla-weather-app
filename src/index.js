@@ -42,6 +42,7 @@ function displayTemperature(response) {
     icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     icon.setAttribute("alt", response.data.weather[0].description);
 
+
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitting);
@@ -80,4 +81,28 @@ function showCel(event) {
 fahrTemp.addEventListener("click", showFahrTemp);
 
 celTemp.addEventListener("click", showCel);
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function(day) {
+        forecastHTML = forecastHTML +
+            `<div class="col-2">
+    <span class="day">${day}</span>
+    <span><img src="img/5729380_cloudy_snow_winter_cloud_snowflake_icon.svg" alt="" class="weather-image"></span>
+    <span class="test">
+    <span><img src="img/temperature-svgrepo-com.svg" alt="" class="temp-sign"></span>
+    <span class="temps">
+        <span class="future-temp-max">18&deg;</span>
+    <span class="future-temp-min">12&deg;</span>
+    </span>
+    </span>
+    </div>`;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+
+}
 search("London");
+displayForecast();

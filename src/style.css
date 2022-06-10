@@ -36,7 +36,7 @@
     }
     
     .future-forecast {
-        overflow: auto;
+        overflow: hidden;
     }
     
     .future-forecast .col-2 {
