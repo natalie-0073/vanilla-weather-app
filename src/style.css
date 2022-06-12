@@ -5,7 +5,7 @@
     
     body {
         font-family: 'Lato', sans-serif;
-        background-image: url("../img/pexels-konevi-3789871.jpg");
+        background-image: url("../img/pexels-francesco-ungaro-2325446.jpg");
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -31,7 +31,7 @@
         left: 50%;
         transform: translateX(-50%);
         padding: 20px;
-        border-radius: 8px;
+        border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
     
@@ -101,7 +101,7 @@
     }
     
     .search-button {
-        background: #0E416E;
+        background: #5F2D3E;
         color: white;
         border: none;
         border-radius: 5px;
@@ -110,7 +110,7 @@
     }
     
     .search-button:hover {
-        background: #2868AC;
+        background: #B88360;
     }
     
     #sky-condition:first-letter {
@@ -119,15 +119,15 @@
     
     .active {
         text-decoration: none;
-        color: #041F3C;
-    }
-    
-    a {
         color: white;
     }
     
+    a {
+        color: #B88360;
+    }
+    
     a:hover {
-        color: #041F3C;
+        color: white;
         cursor: default;
     }
     
