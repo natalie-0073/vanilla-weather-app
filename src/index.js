@@ -24,9 +24,16 @@ function formatDate() {
     return `${num} ${months[month]}, ${days[day]} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[day];
+}
+
 function getForecast(coordinates) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayForecast);
 }
 
@@ -89,23 +96,27 @@ fahrTemp.addEventListener("click", showFahrTemp);
 celTemp.addEventListener("click", showCel);
 
 function displayForecast(response) {
-    console.log(response.data.daily)
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecast = response.data.daily;
+    console.log(response.data.daily);
     let forecastHTML = `<div class="row">`;
-    days.forEach(function(day) {
-        forecastHTML = forecastHTML +
-            `<div class="col-2">
-    <span class="day">${day}</span>
-    <span><img src="img/5729380_cloudy_snow_winter_cloud_snowflake_icon.svg" alt="" class="weather-image"></span>
+    forecast.forEach(function(forecastDay, index) {
+        if (index < 6) {
+            forecastHTML +=
+                `<div class="col-2">
+    <span class="day">${formatDay(forecastDay.dt)}</span>
+    <span><img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" alt="" class="weather-image"></span>
     <span class="test">
     <span><img src="img/temperature-svgrepo-com.svg" alt="" class="temp-sign"></span>
     <span class="temps">
-        <span class="future-temp-max">18&deg;</span>
-    <span class="future-temp-min">12&deg;</span>
+        <span class="future-temp-max">${Math.round(forecastDay.temp.max)}&deg;</span>
+    <span class="future-temp-min">${Math.round(forecastDay.temp.min)}&deg;</span>
     </span>
     </span>
     </div>`;
+        }
     });
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
