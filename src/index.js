@@ -25,9 +25,9 @@ function formatDate() {
 }
 
 function getForecast(coordinates) {
-    let apiKey = "b03736065bb7825b8928a0ccf7cca97f";
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
-    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -88,7 +88,8 @@ fahrTemp.addEventListener("click", showFahrTemp);
 
 celTemp.addEventListener("click", showCel);
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily)
     let forecastElement = document.querySelector("#forecast");
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHTML = `<div class="row">`;
